@@ -1,10 +1,9 @@
-package net.thumbtack.repo.iface;
+package net.thumbtack.service.iface;
 
 import net.thumbtack.model.Category;
 import net.thumbtack.model.Product;
 
-public interface AdminRepository {
-
+public interface AdminService {
   void addProduct(Product product);
   void deleteProduct(Product product);
   void addCategory(Category category);

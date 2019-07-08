@@ -31,9 +31,4 @@ public class ProductController {
     Product product = productService.getProductById(id);
     return new ResponseEntity<>(product, HttpStatus.OK);
   }
-
-  @PostMapping("addProduct")
-  public void addProduct(@RequestBody Product product) {
-    this.productService.addProduct(product);
-  }
 }

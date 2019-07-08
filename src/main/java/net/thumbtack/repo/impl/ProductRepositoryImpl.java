@@ -35,13 +35,6 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
   @Override
-  public void saveProduct(Product product) {
-    jdbcTemplate.update("INSERT INTO products (nameProduct, price) values (?,?)",
-        product.getNameProduct(),
-        product.getPrice());
-  }
-
-  @Override
   public Product getProductById(int id) {
     String sql = "SELECT * FROM products WHERE id = ?";
     return jdbcTemplate.queryForObject(sql, new Object[]{id}, productMapper);

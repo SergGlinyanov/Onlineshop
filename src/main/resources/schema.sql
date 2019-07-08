@@ -9,8 +9,8 @@ CREATE TABLE `products` (
 
 CREATE TABLE `categories` (
 	`id` bigint NOT NULL AUTO_INCREMENT,
-	`nameCategory` varchar(255) NOT NULL,
-	`id_parent_category` int NOT NULL,
+	`nameCategory` varchar(255),
+	`id_parent_category` int,
 	PRIMARY KEY (`id`)
 );
 

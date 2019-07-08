@@ -8,7 +8,7 @@ public class User extends GlobalUser {
   private String address;
   private String phone;
   private int deposit;
-  private Map<Product, Integer> basket;
+  private Basket basket;
 
   public User(String lastName, String firstName, String patronymic, String email,
       String postalAddress, String phoneNumber, String login,
