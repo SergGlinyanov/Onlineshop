@@ -2,11 +2,11 @@ package net.thumbtack.model;
 
 public class Category {
 
-  private int id;
+  private long id;
   private String name;
-  private int idParentCategory;
+  private long idParentCategory;
 
-  public Category(int id, String name, int idParentCategory) {
+  public Category(long id, String name, int idParentCategory) {
     this.id = id;
     this.name = name;
     this.idParentCategory = idParentCategory;
@@ -15,11 +15,11 @@ public class Category {
   public Category() {
   }
 
-  public int getId() {
+  public long getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(long id) {
     this.id = id;
   }
 
@@ -31,11 +31,11 @@ public class Category {
     this.name = name;
   }
 
-  public int getIdParentCategory() {
+  public long getIdParentCategory() {
     return idParentCategory;
   }
 
-  public void setIdParentCategory(int idParentCategory) {
+  public void setIdParentCategory(long idParentCategory) {
     this.idParentCategory = idParentCategory;
   }
 }

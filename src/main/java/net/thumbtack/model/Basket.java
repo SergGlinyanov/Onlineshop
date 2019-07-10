@@ -6,10 +6,15 @@ import java.util.List;
 import java.util.Map;
 
 public class Basket {
+  long id;
   Map<Product, Integer> basket;
 
-  public Basket(Map<Product, Integer> basket) {
+  public Basket(long id, Map<Product, Integer> basket) {
+    this.id = id;
     this.basket = basket;
+  }
+
+  public Basket() {
   }
 
   public Map<Product, Integer> getBasket() {
@@ -18,5 +23,13 @@ public class Basket {
 
   public void setBasket(Map<Product, Integer> basket) {
     this.basket = basket;
+  }
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
   }
 }

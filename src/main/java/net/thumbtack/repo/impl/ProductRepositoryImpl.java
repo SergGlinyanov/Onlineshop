@@ -28,6 +28,7 @@ public class ProductRepositoryImpl implements ProductRepository {
       product.setId((long)row.get("id"));
       product.setNameProduct((String)row.get("nameProduct"));
       product.setPrice(((int) row.get("price")));
+      product.setCount(((int) row.get("count")));
       result.add(product);
 });
 

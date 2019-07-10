@@ -5,9 +5,9 @@ import java.util.List;
 public class Product {
   long id;
   String nameProduct;
-  List<String> categories;
   int price;
   int count;
+  List<Category> categories;
 
   public Product(long id, String nameProduct, int price) {
     this.id = id;
@@ -50,20 +50,11 @@ public class Product {
     this.count = count;
   }
 
-  public List<String> getCategories() {
+  public List<Category> getCategories() {
     return categories;
   }
 
-  public void setCategories(List<String> categories) {
+  public void setCategories(List<Category> categories) {
     this.categories = categories;
-  }
-
-  @Override
-  public String toString() {
-    return "Product{" +
-        "id=" + id +
-        ", nameProduct='" + nameProduct + '\'' +
-        ", price=" + price +
-        '}';
   }
 }

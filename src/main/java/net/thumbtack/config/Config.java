@@ -2,14 +2,20 @@ package net.thumbtack.config;
 
 import net.thumbtack.repo.iface.AdminRepository;
 import net.thumbtack.repo.iface.ProductRepository;
+import net.thumbtack.repo.iface.ClientRepository;
 import net.thumbtack.repo.impl.AdminRepositoryImpl;
 import net.thumbtack.repo.impl.ProductRepositoryImpl;
+import net.thumbtack.repo.impl.ClientRepositoryImpl;
+import net.thumbtack.repo.mapper.AdminMapper;
 import net.thumbtack.repo.mapper.CategoryMapper;
 import net.thumbtack.repo.mapper.ProductMapper;
+import net.thumbtack.repo.mapper.ClientMapper;
 import net.thumbtack.service.iface.AdminService;
 import net.thumbtack.service.iface.ProductService;
+import net.thumbtack.service.iface.ClientService;
 import net.thumbtack.service.impl.AdminServiceImpl;
 import net.thumbtack.service.impl.ProductSeviceImpl;
+import net.thumbtack.service.impl.ClientServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,6 +26,11 @@ public class Config {
   @Bean
   public ProductMapper productMapper() {
     return new ProductMapper();
+  }
+
+  @Bean
+  ClientMapper clientMapper() {
+    return new ClientMapper();
   }
 
   @Bean
@@ -44,8 +55,23 @@ public class Config {
   }
 
   @Bean
+  public AdminRepository adminRepository(JdbcTemplate jdbcTemplate, AdminMapper adminMapper) {
+    return new AdminRepositoryImpl(jdbcTemplate, adminMapper);
+  }
+
+  @Bean
   public AdminService adminService(AdminRepository adminRepository) {
     return new AdminServiceImpl(adminRepository);
+  }
+
+  @Bean
+  public ClientRepository userRepository(JdbcTemplate jdbcTemplate, ClientMapper clientMapper) {
+    return new ClientRepositoryImpl(jdbcTemplate, clientMapper);
+  }
+
+  @Bean
+  public ClientService userService(ClientRepository clientRepository) {
+    return new ClientServiceImpl(clientRepository);
   }
 
 

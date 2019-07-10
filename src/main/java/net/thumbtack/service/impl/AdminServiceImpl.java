@@ -1,5 +1,7 @@
 package net.thumbtack.service.impl;
 
+import java.util.List;
+import net.thumbtack.model.Admin;
 import net.thumbtack.model.Category;
 import net.thumbtack.model.Product;
 import net.thumbtack.repo.iface.AdminRepository;
@@ -11,6 +13,11 @@ public class AdminServiceImpl implements AdminService {
 
   public AdminServiceImpl(AdminRepository adminRepository) {
     this.adminRepository = adminRepository;
+  }
+
+  @Override
+  public void addAdmin(Admin admin) {
+    adminRepository.addAdmin(admin);
   }
 
   @Override
@@ -31,6 +38,11 @@ public class AdminServiceImpl implements AdminService {
   @Override
   public void deleteCategory(Category category) {
     adminRepository.deleteCategory(category);
+  }
+
+  @Override
+  public List<Category> getAllCategory() {
+    return adminRepository.getAllCategory();
   }
 
   @Override
