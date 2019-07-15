@@ -1,9 +1,11 @@
 package net.thumbtack.config;
 
 import net.thumbtack.repo.iface.AdminRepository;
+import net.thumbtack.repo.iface.CategoryRepository;
 import net.thumbtack.repo.iface.ProductRepository;
 import net.thumbtack.repo.iface.ClientRepository;
 import net.thumbtack.repo.impl.AdminRepositoryImpl;
+import net.thumbtack.repo.impl.CategoryRepositoryImpl;
 import net.thumbtack.repo.impl.ProductRepositoryImpl;
 import net.thumbtack.repo.impl.ClientRepositoryImpl;
 import net.thumbtack.repo.mapper.AdminMapper;
@@ -11,9 +13,11 @@ import net.thumbtack.repo.mapper.CategoryMapper;
 import net.thumbtack.repo.mapper.ProductMapper;
 import net.thumbtack.repo.mapper.ClientMapper;
 import net.thumbtack.service.iface.AdminService;
+import net.thumbtack.service.iface.CategoryService;
 import net.thumbtack.service.iface.ProductService;
 import net.thumbtack.service.iface.ClientService;
 import net.thumbtack.service.impl.AdminServiceImpl;
+import net.thumbtack.service.impl.CategoryServiceImpl;
 import net.thumbtack.service.impl.ProductSeviceImpl;
 import net.thumbtack.service.impl.ClientServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -34,6 +38,16 @@ public class Config {
   }
 
   @Bean
+  AdminMapper adminMapper() {
+    return new AdminMapper();
+  }
+
+  @Bean
+  CategoryMapper categoryMapper() {
+    return new CategoryMapper();
+  }
+
+  @Bean
   public ProductRepository productRepository(JdbcTemplate jdbcTemplate,
       ProductMapper productMapper) {
     return new ProductRepositoryImpl(jdbcTemplate, productMapper);
@@ -44,15 +58,6 @@ public class Config {
     return new ProductSeviceImpl(productRepository);
   }
 
-  @Bean
-  public AdminRepository adminRepository(JdbcTemplate jdbcTemplate, ProductMapper productMapper) {
-    return new AdminRepositoryImpl(jdbcTemplate, productMapper);
-  }
-
-  @Bean
-  public AdminRepository adminRepository(JdbcTemplate jdbcTemplate, CategoryMapper categoryMapper) {
-    return new AdminRepositoryImpl(jdbcTemplate, categoryMapper);
-  }
 
   @Bean
   public AdminRepository adminRepository(JdbcTemplate jdbcTemplate, AdminMapper adminMapper) {
@@ -65,14 +70,22 @@ public class Config {
   }
 
   @Bean
-  public ClientRepository userRepository(JdbcTemplate jdbcTemplate, ClientMapper clientMapper) {
+  public ClientRepository clientRepository(JdbcTemplate jdbcTemplate, ClientMapper clientMapper) {
     return new ClientRepositoryImpl(jdbcTemplate, clientMapper);
   }
 
   @Bean
-  public ClientService userService(ClientRepository clientRepository) {
+  public ClientService clientService(ClientRepository clientRepository) {
     return new ClientServiceImpl(clientRepository);
   }
 
+  @Bean
+  public CategoryRepository categoryRepository(JdbcTemplate jdbcTemplate, CategoryMapper categoryMapper) {
+    return new CategoryRepositoryImpl(jdbcTemplate, categoryMapper);
+  }
 
+  @Bean
+  public CategoryService categoryService(CategoryRepository categoryRepository) {
+    return new CategoryServiceImpl(categoryRepository);
+  }
 }

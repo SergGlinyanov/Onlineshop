@@ -7,12 +7,21 @@ public class Product {
   String nameProduct;
   int price;
   int count;
-  List<Category> categories;
+  List<Long> categories;
 
   public Product(long id, String nameProduct, int price) {
     this.id = id;
     this.nameProduct = nameProduct;
     this.price = price;
+  }
+
+  public Product(long id, String nameProduct, int price, int count,
+      List<Long> categories) {
+    this.id = id;
+    this.nameProduct = nameProduct;
+    this.price = price;
+    this.count = count;
+    this.categories = categories;
   }
 
   public Product() {
@@ -50,11 +59,22 @@ public class Product {
     this.count = count;
   }
 
-  public List<Category> getCategories() {
+  public List<Long> getCategories() {
     return categories;
   }
 
-  public void setCategories(List<Category> categories) {
+  public void setCategories(List<Long> categories) {
     this.categories = categories;
+  }
+
+  @Override
+  public String toString() {
+    return "Product{" +
+        "id=" + id +
+        ", nameProduct='" + nameProduct + '\'' +
+        ", price=" + price +
+        ", count=" + count +
+        ", categories=" + categories +
+        '}';
   }
 }

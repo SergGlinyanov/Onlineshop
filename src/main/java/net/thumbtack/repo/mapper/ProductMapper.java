@@ -13,6 +13,9 @@ public class ProductMapper implements RowMapper<Product> {
     product.setId(resultSet.getLong("id"));
     product.setNameProduct(resultSet.getString("nameProduct"));
     product.setPrice(resultSet.getInt("price"));
+    product.setCount(resultSet.getInt("count"));
+    //Что делать если одно из полей коллекция?
+    //product.getCategories().add(resultSet.getLong("id_category"));
     return product;
   }
 }

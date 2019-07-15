@@ -19,7 +19,23 @@ public class ProductSeviceImpl implements ProductService {
   }
 
   @Override
-  public Product getProductById(int id) {
+  public Product getProductById(long id) {
     return productRepository.getProductById(id);
+  }
+
+  @Override
+  public Product addProduct(Product product) {
+    return new Product(productRepository.addProduct(product),
+        product.getNameProduct(), product.getPrice(), product.getCount(), product.getCategories());
+  }
+
+  @Override
+  public void deleteProduct(Product product) {
+    productRepository.deleteProduct(product);
+  }
+
+  @Override
+  public void editProduct(Product product, long id) {
+    productRepository.editProduct(product, id);
   }
 }

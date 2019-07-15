@@ -1,9 +1,12 @@
 package net.thumbtack.service.iface;
 
-import net.thumbtack.dto.ClientDto;
+import java.util.List;
+import net.thumbtack.dto.ClientListDto;
+import net.thumbtack.dto.ClientRegistrationDto;
 
 public interface ClientService {
 
-  void addClient(ClientDto clientDto);
+  void addClient(ClientRegistrationDto clientRegistrationDto);
+  List<ClientListDto> getAllClients();
 
 }

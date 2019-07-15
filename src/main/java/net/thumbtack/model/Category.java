@@ -6,7 +6,7 @@ public class Category {
   private String name;
   private long idParentCategory;
 
-  public Category(long id, String name, int idParentCategory) {
+  public Category(long id, String name, long idParentCategory) {
     this.id = id;
     this.name = name;
     this.idParentCategory = idParentCategory;
@@ -37,5 +37,14 @@ public class Category {
 
   public void setIdParentCategory(long idParentCategory) {
     this.idParentCategory = idParentCategory;
+  }
+
+  @Override
+  public String toString() {
+    return "Category{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", idParentCategory=" + idParentCategory +
+        '}';
   }
 }

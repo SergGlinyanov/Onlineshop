@@ -1,6 +1,6 @@
 package net.thumbtack.dto;
 
-public class ClientDto {
+public class ClientListDto {
 
   private long id;
   private String lastName;
@@ -9,11 +9,10 @@ public class ClientDto {
   private String email;
   private String address;
   private String phone;
-  private String login;
-  private String password;
+  private String userType;
 
-  public ClientDto(long id, String lastName, String firstName, String patronymic,
-      String email, String address, String phone, String login, String password) {
+  public ClientListDto(long id, String lastName, String firstName, String patronymic,
+      String email, String address, String phone, String userType) {
     this.id = id;
     this.lastName = lastName;
     this.firstName = firstName;
@@ -21,11 +20,10 @@ public class ClientDto {
     this.email = email;
     this.address = address;
     this.phone = phone;
-    this.login = login;
-    this.password = password;
+    this.userType = userType;
   }
 
-  public ClientDto() {
+  public ClientListDto() {
   }
 
   public long getId() {
@@ -84,19 +82,11 @@ public class ClientDto {
     this.phone = phone;
   }
 
-  public String getLogin() {
-    return login;
+  public String getUserType() {
+    return userType;
   }
 
-  public void setLogin(String login) {
-    this.login = login;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
+  public void setUserType(String userType) {
+    this.userType = userType;
   }
 }

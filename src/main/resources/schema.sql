@@ -9,7 +9,7 @@ CREATE TABLE `products` (
 
 CREATE TABLE `categories` (
 	`id` bigint NOT NULL AUTO_INCREMENT,
-	`nameCategory` varchar(255),
+	`nameCategory` varchar(255) NOT NULL,
 	`id_parent_category` bigint,
 	PRIMARY KEY (`id`)
 );
@@ -30,7 +30,7 @@ CREATE TABLE `clients` (
 	`postalAddress` varchar(255) NOT NULL,
 	`phoneNumber` varchar(255) NOT NULL,
 	`login` varchar(255) NOT NULL,
-	`password` varchar(255) NOT NULL,
+	`newPassword` varchar(255) NOT NULL,
 	`deposit` int,
 	PRIMARY KEY (`id`)
 );

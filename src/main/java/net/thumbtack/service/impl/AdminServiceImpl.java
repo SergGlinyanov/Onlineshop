@@ -1,9 +1,8 @@
 package net.thumbtack.service.impl;
 
-import java.util.List;
+import net.thumbtack.dto.EditAdminDto;
+import net.thumbtack.dto.ResponseAdminDto;
 import net.thumbtack.model.Admin;
-import net.thumbtack.model.Category;
-import net.thumbtack.model.Product;
 import net.thumbtack.repo.iface.AdminRepository;
 import net.thumbtack.service.iface.AdminService;
 
@@ -16,42 +15,16 @@ public class AdminServiceImpl implements AdminService {
   }
 
   @Override
-  public void addAdmin(Admin admin) {
-    adminRepository.addAdmin(admin);
+  public ResponseAdminDto addAdmin(Admin admin) {
+    return new ResponseAdminDto(adminRepository.addAdmin(admin),
+        admin.getLastName(), admin.getFirstName(), admin.getPatronymic(),
+        admin.getPosition());
   }
 
   @Override
-  public void addProduct(Product product) {
-    adminRepository.addProduct(product);
-  }
-
-  @Override
-  public void deleteProduct(Product product) {
-    adminRepository.deleteProduct(product);
-  }
-
-  @Override
-  public void addCategory(Category category) {
-    adminRepository.addCategory(category);
-  }
-
-  @Override
-  public void deleteCategory(Category category) {
-    adminRepository.deleteCategory(category);
-  }
-
-  @Override
-  public List<Category> getAllCategory() {
-    return adminRepository.getAllCategory();
-  }
-
-  @Override
-  public Product getProductById(int id) {
-    return adminRepository.getProductById(id);
-  }
-
-  @Override
-  public Category getCategoryById(int id) {
-    return adminRepository.getCategoryById(id);
+  public void editAdmin(EditAdminDto editAdminDto, long id) {
+    Admin admin = new Admin(id, editAdminDto.getLastName(), editAdminDto.getFirstName(),
+        editAdminDto.getPatronymic(), "", editAdminDto.getNewPassword(), editAdminDto.getPosition());
+    adminRepository.editAdmin(admin);
   }
 }
