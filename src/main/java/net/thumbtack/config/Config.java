@@ -12,6 +12,7 @@ import net.thumbtack.repo.mapper.AdminMapper;
 import net.thumbtack.repo.mapper.CategoryMapper;
 import net.thumbtack.repo.mapper.ProductMapper;
 import net.thumbtack.repo.mapper.ClientMapper;
+import net.thumbtack.repo.mapper.PurchaseProductDtoMapper;
 import net.thumbtack.service.iface.AdminService;
 import net.thumbtack.service.iface.CategoryService;
 import net.thumbtack.service.iface.ProductService;
@@ -30,6 +31,11 @@ public class Config {
   @Bean
   public ProductMapper productMapper() {
     return new ProductMapper();
+  }
+
+  @Bean
+  public PurchaseProductDtoMapper purchaseProductDtoMapper() {
+    return new PurchaseProductDtoMapper();
   }
 
   @Bean
@@ -70,8 +76,9 @@ public class Config {
   }
 
   @Bean
-  public ClientRepository clientRepository(JdbcTemplate jdbcTemplate, ClientMapper clientMapper) {
-    return new ClientRepositoryImpl(jdbcTemplate, clientMapper);
+  public ClientRepository clientRepository(JdbcTemplate jdbcTemplate,
+      ClientMapper clientMapper, PurchaseProductDtoMapper purchaseProductDto) {
+    return new ClientRepositoryImpl(jdbcTemplate, clientMapper, purchaseProductDto);
   }
 
   @Bean

@@ -1,6 +1,7 @@
 package net.thumbtack.repo.impl;
 
 import java.sql.PreparedStatement;
+import net.thumbtack.dto.EditAdminDto;
 import net.thumbtack.model.Admin;
 import net.thumbtack.repo.iface.AdminRepository;
 import net.thumbtack.repo.mapper.AdminMapper;
@@ -40,14 +41,20 @@ public class AdminRepositoryImpl implements AdminRepository {
   }
 
   @Override
-  public void editAdmin(Admin admin) {
+  public void editAdmin(EditAdminDto editAdminDto, long id) {
     jdbcTemplate.update("UPDATE admins SET lastName = ?,"
             + " firstName = ?, patronymic = ?, position =?, password=? WHERE id = ?",
-        admin.getLastName(),
-        admin.getFirstName(),
-        admin.getPatronymic(),
-        admin.getPosition(),
-        admin.getPassword(),
-        admin.getId());
+        editAdminDto.getLastName(),
+        editAdminDto.getFirstName(),
+        editAdminDto.getPatronymic(),
+        editAdminDto.getPosition(),
+        editAdminDto.getNewPassword(),
+        id);
+  }
+
+  @Override
+  public Admin getAdminById(long id) {
+    String sql = "SELECT * FROM admins WHERE id = ?";
+    return jdbcTemplate.queryForObject(sql, new Object[]{id}, adminMapper);
   }
 }

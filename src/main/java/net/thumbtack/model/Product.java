@@ -4,21 +4,21 @@ import java.util.List;
 
 public class Product {
   long id;
-  String nameProduct;
+  String name;
   int price;
   int count;
   List<Long> categories;
 
-  public Product(long id, String nameProduct, int price) {
+  public Product(long id, String name, int price) {
     this.id = id;
-    this.nameProduct = nameProduct;
+    this.name = name;
     this.price = price;
   }
 
-  public Product(long id, String nameProduct, int price, int count,
+  public Product(long id, String name, int price, int count,
       List<Long> categories) {
     this.id = id;
-    this.nameProduct = nameProduct;
+    this.name = name;
     this.price = price;
     this.count = count;
     this.categories = categories;
@@ -35,12 +35,12 @@ public class Product {
     this.id = id;
   }
 
-  public String getNameProduct() {
-    return nameProduct;
+  public String getName() {
+    return name;
   }
 
-  public void setNameProduct(String nameProduct) {
-    this.nameProduct = nameProduct;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public int getPrice() {
@@ -71,7 +71,7 @@ public class Product {
   public String toString() {
     return "Product{" +
         "id=" + id +
-        ", nameProduct='" + nameProduct + '\'' +
+        ", name='" + name + '\'' +
         ", price=" + price +
         ", count=" + count +
         ", categories=" + categories +

@@ -11,11 +11,9 @@ public class ProductMapper implements RowMapper<Product> {
   public Product mapRow(ResultSet resultSet, int i) throws SQLException {
     Product product = new Product();
     product.setId(resultSet.getLong("id"));
-    product.setNameProduct(resultSet.getString("nameProduct"));
+    product.setName(resultSet.getString("name"));
     product.setPrice(resultSet.getInt("price"));
     product.setCount(resultSet.getInt("count"));
-    //Что делать если одно из полей коллекция?
-    //product.getCategories().add(resultSet.getLong("id_category"));
     return product;
   }
 }

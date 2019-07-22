@@ -80,4 +80,17 @@ public class Admin {
   public void setPosition(String position) {
     this.position = position;
   }
+
+  @Override
+  public String toString() {
+    return "Admin{" +
+        "id=" + id +
+        ", lastName='" + lastName + '\'' +
+        ", firstName='" + firstName + '\'' +
+        ", patronymic='" + patronymic + '\'' +
+        ", login='" + login + '\'' +
+        ", password='" + password + '\'' +
+        ", position='" + position + '\'' +
+        '}';
+  }
 }

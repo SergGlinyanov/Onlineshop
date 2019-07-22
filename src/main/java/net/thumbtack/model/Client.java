@@ -1,6 +1,6 @@
 package net.thumbtack.model;
 
-import java.util.Map;
+import java.util.List;
 
 public class Client {
 
@@ -14,7 +14,7 @@ public class Client {
   private String login;
   private String password;
   private int deposit;
-  private Basket basket;
+  private List<BasketItems> basket;
 
   public Client(Long id, String lastName, String firstName, String patronymic, String email,
       String address, String phone, String login, String password) {
@@ -112,11 +112,11 @@ public class Client {
     this.deposit = deposit;
   }
 
-  public Basket getBasket() {
+  public List<BasketItems> getBasket() {
     return basket;
   }
 
-  public void setBasket(Basket basket) {
+  public void setBasket(List<BasketItems> basket) {
     this.basket = basket;
   }
 }

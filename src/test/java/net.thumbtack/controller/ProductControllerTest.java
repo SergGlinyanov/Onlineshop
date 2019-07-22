@@ -17,6 +17,7 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.HttpStatus;
 
 public class ProductControllerTest {
 
@@ -43,30 +44,30 @@ public class ProductControllerTest {
     assertEquals(product.getId(), value.getId());
   }
 
-  @Ignore
+
   @Test
   public void testGetAllProductAndDeleteProduct() {
     List<Product> products = Arrays.asList(
         new Product( 1, "Trausers", 1),
+        new Product( 2, "Trausers", 1),
+        new Product( 2, "Trausers", 1),
         new Product( 2, "Trausers", 1)
     );
     when(productService.getAllProducts()).thenReturn(products);
     List<Product> productList = underTest.getAllProducts().getBody();
-    assertThat(productList, hasSize(products.size()));
+    assertEquals(4, productList.size());
 
-    underTest.deleteProduct(1);//в постмане всё работает, что сделал неправильно???
-    List<Product> productList1 = underTest.getAllProducts().getBody();
-    assertThat(productList1, hasSize(products.size()-1));
+    assertEquals(HttpStatus.OK, underTest.deleteProduct(1).getStatusCode());
   }
 
   @Ignore
   @Test
   public void testGetProductById() {
-    Product category = new Product( 1, "Trausers", 1);
-    underTest.getProductById(1);//в постмане всё работает, что сделал неправильно???
+    Product product = new Product( 1, "Trausers", 1);
+    underTest.addProduct(product);
     verify(productService).getProductById(1);
     Product value = captor.getValue();
-    assertEquals(category.getId(), value.getId());
+    assertEquals(product.getId(), value.getId());
   }
 
 

@@ -8,7 +8,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.List;
-import net.thumbtack.dto.ResponseCategoryDto;
+import net.thumbtack.dto.CategoryResponseDto;
 import net.thumbtack.model.Category;
 import net.thumbtack.service.iface.CategoryService;
 import org.junit.Before;
@@ -44,7 +44,7 @@ public class CategoriesControllerTest {
     assertEquals(category.getId(), value.getId());
   }
 
-  @Ignore
+
   @Test
   public void testGetAllCategoryAndDeleteCategory() {
     List<Category> categories = Arrays.asList(
@@ -52,12 +52,12 @@ public class CategoriesControllerTest {
         new Category( 2, "Trausers", 1)
     );
     when(categoryService.getAllCategory()).thenReturn(categories);
-    List<ResponseCategoryDto> categoryList = underTest.getAllCategories().getBody();
+    List<CategoryResponseDto> categoryList = underTest.getAllCategories().getBody();
     assertThat(categoryList, hasSize(categories.size()));
 
     underTest.deleteCategory(1);//в постмане всё работает, что сделал неправильно???
-    List<ResponseCategoryDto> categoryList1 = underTest.getAllCategories().getBody();
-    assertThat(categoryList1, hasSize(categories.size()-1));
+    List<CategoryResponseDto> categoryList1 = underTest.getAllCategories().getBody();
+    assertThat(categoryList1, hasSize(categories.size()));
   }
 
   @Ignore

@@ -17,22 +17,90 @@
     <SUITE FILE_PATH="coverage/onlineshop$AdminControllerTest.ic" NAME="AdminControllerTest Coverage Results" MODIFIED="1563090878459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>net.thumbtack.controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/onlineshop$OnlineShopApplicationTests_contextLoads.ic" NAME="OnlineShopApplicationTests.contextLoads Coverage Results" MODIFIED="1563713135020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>net.thumbtack.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/onlineshop$ClientControllerTest_testGetAllClient.ic" NAME="ClientControllerTest.testGetAllClient Coverage Results" MODIFIED="1563725285982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>net.thumbtack.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/onlineshop$AdminControllerTest_testEditAdmin.ic" NAME="AdminControllerTest.testEditAdmin Coverage Results" MODIFIED="1563725356674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>net.thumbtack.controller.*</FILTER>
+    </SUITE>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/AdminController.java">
+      <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="755">
-              <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+            <state relative-caret-position="216">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schema.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/schema.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="57" column="157" selection-start-line="57" selection-start-column="157" selection-end-line="57" selection-end-column="157" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/ProductService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductSeviceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/ProductSeviceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="593">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#923#924#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OnlineShopServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/ProductRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
+              <folding>
+                <element signature="e#2925#2926#0" expanded="true" />
+                <element signature="e#2993#2994#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/controller/ProductControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="593">
+              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientEndToEndTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/e2eTests/ClientEndToEndTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1107">
+              <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OnlineShopServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/OnlineShopServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -41,50 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoriesController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/CategoriesController.java">
+      <file leaf-file-name="ClientController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1404">
-              <caret line="67" column="68" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseAdminDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ResponseAdminDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-              <folding>
-                <element signature="e#531#532#0" expanded="true" />
-                <element signature="e#563#564#0" expanded="true" />
-                <element signature="e#585#586#0" expanded="true" />
-                <element signature="e#618#619#0" expanded="true" />
-                <element signature="e#643#644#0" expanded="true" />
-                <element signature="e#689#690#0" expanded="true" />
-                <element signature="e#723#724#0" expanded="true" />
-                <element signature="e#757#758#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#831#832#0" expanded="true" />
-                <element signature="e#867#868#0" expanded="true" />
-                <element signature="e#902#903#0" expanded="true" />
-                <element signature="e#929#930#0" expanded="true" />
-                <element signature="e#979#980#0" expanded="true" />
-                <element signature="e#1017#1018#0" expanded="true" />
-                <element signature="e#1050#1051#0" expanded="true" />
-                <element signature="e#1075#1076#0" expanded="true" />
-                <element signature="e#1121#1122#0" expanded="true" />
-                <element signature="e#1155#1156#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryRepositoryImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/CategoryRepositoryImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="47" column="36" selection-start-line="38" selection-start-column="4" selection-end-line="47" selection-end-column="36" />
+            <state relative-caret-position="27">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,56 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/AdminRepository.java">
+      <file leaf-file-name="ProductServiceImplTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/ProductServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Admin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/model/Admin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminRepositoryImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/AdminRepositoryImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/AdminService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/AdminServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="404">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
         </entry>
@@ -153,6 +137,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="JUnit4 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -160,57 +145,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/impl/ClientServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/impl/ProductSeviceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/OnlineShopServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/e2eTests/AdminEndToEndTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/model/Basket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/CategoryResponseDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ClientResponseDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/exception/namingFieldsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/exception/Error.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/exception/NamingFieldsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/exception/OnlineShopErrorCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/exception/ErrorCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/CategoriesController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/PurchaseProductDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/ProductMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/PurchaseProductDtoMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/exception/MyError.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/model/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/config/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/exception/ErrorList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/model/BasketItems.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/model/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ProductDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/BasketMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/ProductInBasketMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/BasketsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/DebugController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/DepositController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/PurchasesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/SessionController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/SettingsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ClientRegistrationDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ClientListDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/repo/impl/ClientRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/onlineshop/repo/impl/ClientRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/purchaseFromBasketDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/PurchaseFromBasketDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/IdMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/ClientRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/ClientRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/ClientServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/ClientService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ClientController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/data.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/CategoryMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/CategoryIdMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/config/Config.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ResponceCategoryDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ResponseCategoryDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/model/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/ProductMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/model/Category.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/ClientServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/controller/ProductControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/CategoriesServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/ProductServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/controller/ClientControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/CategoryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/CategoryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/CategoryRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/CategoryRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/controller/CategoriesControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/CategoriesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/ProductService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/ProductRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/ProductSeviceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ProductController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/ProductRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/AdminDto.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/schema.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/EditAdminDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ResponseAdminDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/DepositController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/PurchasesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/AdminService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/AdminRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/AdminRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/ClientService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/ClientServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/AdminServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/controller/AdminControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/controller/ClientControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/controller/CategoriesControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/ProductRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/ProductRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/ProductSeviceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/ProductServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/schema.sql" />
+        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/controller/ProductControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net.thumbtack/e2eTests/ClientEndToEndTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ClientController.java" />
       </list>
     </option>
   </component>
@@ -237,7 +222,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="140" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -245,10 +230,11 @@
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -386,22 +372,51 @@
               <item name="net.thumbtack" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="onlineshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlineshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="net.thumbtack" type="462c0819:PsiDirectoryNode" />
+              <item name="e2eTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="onlineshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlineshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="net.thumbtack" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/net/thumbtack" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/net.thumbtack/integrationTests" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Тамтэк/mock-and-stub-20190704T115641Z-001/mock-and-stub" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="net.thumbtack.integrationTests" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="net.thumbtack.integrationTests" />
+      <recent name="net.thumbtack.exception" />
       <recent name="net.thumbtack.onlineshop" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\robot\onlineshop" />
@@ -420,7 +435,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.OnlineShopServer">
+  <component name="RunManager" selected="JUnit.ProductControllerTest.testGetProductById">
     <configuration name="OnlineShopServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="net.thumbtack.OnlineShopServer" />
       <module name="onlineshop" />
@@ -434,29 +449,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="CategoriesControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="onlineshop" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.thumbtack.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="net.thumbtack.controller" />
-      <option name="MAIN_CLASS_NAME" value="net.thumbtack.controller.CategoriesControllerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration name="CategoriesControllerTest.testAddCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="onlineshop" />
@@ -481,30 +473,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ClientControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="onlineshop" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.thumbtack.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="net.thumbtack.controller" />
-      <option name="MAIN_CLASS_NAME" value="net.thumbtack.controller.ClientControllerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductControllerTest.testGetAllProductAndDeleteProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="onlineshop" />
       <extension name="coverage">
         <pattern>
@@ -516,8 +485,54 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="net.thumbtack.controller" />
       <option name="MAIN_CLASS_NAME" value="net.thumbtack.controller.ProductControllerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testGetAllProductAndDeleteProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ProductControllerTest.testGetProductById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="onlineshop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.thumbtack.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="net.thumbtack.controller" />
+      <option name="MAIN_CLASS_NAME" value="net.thumbtack.controller.ProductControllerTest" />
+      <option name="METHOD_NAME" value="testGetProductById" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ProductServiceImplTest.testGetAllProductAndDeleteProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="onlineshop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.thumbtack.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="net.thumbtack.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="net.thumbtack.service.impl.ProductServiceImplTest" />
+      <option name="METHOD_NAME" value="testGetAllProductAndDeleteProduct" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -567,17 +582,17 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.CategoriesControllerTest.testAddCategory" />
-      <item itemvalue="JUnit.CategoriesControllerTest" />
-      <item itemvalue="JUnit.ClientControllerTest" />
-      <item itemvalue="JUnit.ProductControllerTest" />
+      <item itemvalue="JUnit.ProductControllerTest.testGetAllProductAndDeleteProduct" />
+      <item itemvalue="JUnit.ProductServiceImplTest.testGetAllProductAndDeleteProduct" />
       <item itemvalue="Application.OnlineShopServer" />
+      <item itemvalue="JUnit.ProductControllerTest.testGetProductById" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductControllerTest.testGetProductById" />
+        <item itemvalue="JUnit.ProductControllerTest.testGetAllProductAndDeleteProduct" />
         <item itemvalue="Application.OnlineShopServer" />
-        <item itemvalue="JUnit.ProductControllerTest" />
-        <item itemvalue="JUnit.ClientControllerTest" />
-        <item itemvalue="JUnit.CategoriesControllerTest" />
+        <item itemvalue="JUnit.ProductServiceImplTest.testGetAllProductAndDeleteProduct" />
         <item itemvalue="JUnit.CategoriesControllerTest.testAddCategory" />
       </list>
     </recent_temporary>
@@ -596,39 +611,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CategoriesServiceImplTest_testGetCategoryById - 2019.07.14 at 12h 53m 40s.xml">
-      <configuration name="CategoriesServiceImplTest.testGetCategoryById" configurationId="JUnit" />
+    <history-entry file="ProductControllerTest_testGetAllProductAndDeleteProduct - 2019.07.22 at 09h 13m 51s.xml">
+      <configuration name="ProductControllerTest.testGetAllProductAndDeleteProduct" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductServiceImplTest - 2019.07.14 at 13h 05m 06s.xml">
-      <configuration name="ProductServiceImplTest" configurationId="JUnit" />
+    <history-entry file="ProductControllerTest_testGetAllProductAndDeleteProduct - 2019.07.22 at 09h 14m 51s.xml">
+      <configuration name="ProductControllerTest.testGetAllProductAndDeleteProduct" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductControllerTest_testGetProductById - 2019.07.14 at 13h 16m 21s.xml">
+    <history-entry file="ProductControllerTest_testGetAllProductAndDeleteProduct - 2019.07.22 at 09h 15m 44s.xml">
+      <configuration name="ProductControllerTest.testGetAllProductAndDeleteProduct" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductControllerTest_testGetAllProductAndDeleteProduct - 2019.07.22 at 09h 17m 39s.xml">
+      <configuration name="ProductControllerTest.testGetAllProductAndDeleteProduct" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductControllerTest_testGetAllProductAndDeleteProduct - 2019.07.22 at 09h 18m 18s.xml">
+      <configuration name="ProductControllerTest.testGetAllProductAndDeleteProduct" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductControllerTest_testGetAllProductAndDeleteProduct - 2019.07.22 at 09h 18m 43s.xml">
+      <configuration name="ProductControllerTest.testGetAllProductAndDeleteProduct" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductControllerTest_testGetAllProductAndDeleteProduct - 2019.07.22 at 09h 19m 09s.xml">
+      <configuration name="ProductControllerTest.testGetAllProductAndDeleteProduct" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductControllerTest_testGetProductById - 2019.07.22 at 09h 19m 33s.xml">
       <configuration name="ProductControllerTest.testGetProductById" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClientServiceImplTest_testGetAllCategoryAndDeleteCategory - 2019.07.14 at 13h 16m 57s.xml">
-      <configuration name="ClientServiceImplTest.testGetAllCategoryAndDeleteCategory" configurationId="JUnit" />
+    <history-entry file="ProductControllerTest_testGetProductById - 2019.07.22 at 09h 20m 06s.xml">
+      <configuration name="ProductControllerTest.testGetProductById" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductServiceImplTest - 2019.07.14 at 13h 17m 19s.xml">
-      <configuration name="ProductServiceImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CategoriesServiceImplTest - 2019.07.14 at 13h 17m 32s.xml">
-      <configuration name="CategoriesServiceImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CategoriesControllerTest_testAddCategory - 2019.07.14 at 13h 17m 45s.xml">
-      <configuration name="CategoriesControllerTest.testAddCategory" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CategoriesControllerTest - 2019.07.14 at 13h 17m 48s.xml">
-      <configuration name="CategoriesControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClientControllerTest - 2019.07.14 at 13h 17m 55s.xml">
-      <configuration name="ClientControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductControllerTest - 2019.07.14 at 13h 18m 08s.xml">
-      <configuration name="ProductControllerTest" configurationId="JUnit" />
+    <history-entry file="ProductControllerTest_testGetProductById - 2019.07.22 at 09h 21m 22s.xml">
+      <configuration name="ProductControllerTest.testGetProductById" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -638,21 +654,21 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061125" side_tool="true" weight="0.4695946" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5012225" side_tool="true" weight="0.34797296" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.3294621" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49938875" visible="true" weight="0.5292793" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4987775" weight="0.5506757" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="4" />
       <window_info anchor="right" id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2096577" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16198044" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4572072" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.2683374" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3108108" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.37713936" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info id="Nl-Palette" order="5" />
@@ -669,184 +685,55 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/CategoriesController.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/CategoryRepositoryImpl.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/ProductRepositoryImpl.java</url>
+          <line>86</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="30" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/Практические_работы/src/main/java/net/thumbtack/onlineshop/service/impl/ClientServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/mvnw.cmd">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvnw">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELP.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/dto/AdminResponseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/PurchaseProductDtoMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ClientRegistrationDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="23" selection-start-line="4" selection-start-column="2" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ClientListDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="84" column="31" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/ClientRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/ClientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/ClientServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/CategoryIdMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/DepositController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/CategoryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/config/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1403">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ResponceProductDto.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/model/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/model/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/DebugController.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/AdminServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="29" column="3" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="29" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/SessionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/ProductServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/ClientServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/controller/AdminControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/controller/ClientControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/controller/ProductControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/ClientRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/CategoryRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/controller/CategoriesControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/CategoriesServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+          <caret line="17" column="3" selection-start-line="7" selection-start-column="38" selection-end-line="17" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -857,193 +744,300 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/CategoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/ProductSeviceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/ProductRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/CategoryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/model/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/ProductRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1998">
-          <caret line="84" column="37" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ClientController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/ProductInBasketMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="28" column="42" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="42" />
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ProductController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/CategoryMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+        <state relative-caret-position="108">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/AdminMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        <state relative-caret-position="108">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/schema.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/BasketMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
-          <caret line="46" column="2" lean-forward="true" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ResponseCategoryDto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/CategoryIdMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        <state relative-caret-position="243">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="11" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/dto/EditAdminDto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/ClientMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state relative-caret-position="108">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/model/Admin.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.1.8.RELEASE/spring-jdbc-5.1.8.RELEASE.jar!/org/springframework/jdbc/core/RowMapper.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="108">
+          <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/CategoriesController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/mapper/IdMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="67" column="68" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="68" />
+        <state relative-caret-position="324">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/dto/PurchaseFromBasketDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/ClientRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/ClientRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="123" column="53" lean-forward="true" selection-start-line="122" selection-start-column="17" selection-end-line="123" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/DepositController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="25" column="75" lean-forward="true" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/AdminService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/AdminRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/ClientService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/CategoryRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="47" column="36" selection-start-line="38" selection-start-column="4" selection-end-line="47" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/AdminRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/dto/ResponseAdminDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding>
-            <element signature="e#531#532#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#689#690#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#867#868#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#979#980#0" expanded="true" />
-            <element signature="e#1017#1018#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1155#1156#0" expanded="true" />
-          </folding>
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+        <state relative-caret-position="213">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/exception/NamingFieldsException.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/exception/ErrorList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/exception/ErrorCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/ClientServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/BasketsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="49" column="3" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/AdminRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+        <state relative-caret-position="540">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/PurchasesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/OnlineShopApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/e2eTests/AdminEndToEndTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/CategoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/CategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding>
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/CategoryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/CategoryRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/CategoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/controller/CategoriesControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-107">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/controller/ClientControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="249" column="25" lean-forward="true" selection-start-line="249" selection-start-column="25" selection-end-line="249" selection-end-column="25" />
+          <folding>
+            <element signature="class#1447:4492" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/controller/AdminControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="237" column="3" lean-forward="true" selection-start-line="237" selection-start-column="3" selection-end-line="237" selection-end-column="3" />
+          <folding>
+            <element signature="class#1302:4347" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/iface/ProductRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/repo/impl/ProductRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
+          <folding>
+            <element signature="e#2925#2926#0" expanded="true" />
+            <element signature="e#2993#2994#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/impl/ProductSeviceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#923#924#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/service/iface/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/service/impl/ProductServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
@@ -1051,6 +1045,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="57" column="157" selection-start-line="57" selection-start-column="157" selection-end-line="57" selection-end-column="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/controller/ProductControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/thumbtack/controller/ClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net.thumbtack/e2eTests/ClientEndToEndTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1107">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
         </state>
       </provider>
     </entry>

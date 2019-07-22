@@ -32,10 +32,11 @@ public class ProductRepositoryImpl implements ProductRepository {
 
       Product product = new Product();
       product.setId((long) row.get("id"));
-      product.setNameProduct((String) row.get("nameProduct"));
+      product.setName((String) row.get("name"));
       product.setPrice(((int) row.get("price")));
       product.setCount(((int) row.get("count")));
-      String SQL = "SELECT id_category FROM products WHERE id = " + product.getId();
+      String SQL = "SELECT id_category FROM products_categories WHERE id_product = "
+          + product.getId();
       List<Long> categories = jdbcTemplate.query(SQL, new CategoryIdMapper());
       product.setCategories(categories);
       result.add(product);
@@ -47,42 +48,61 @@ public class ProductRepositoryImpl implements ProductRepository {
   @Override
   public Product getProductById(long id) {
     String sql = "SELECT * FROM products WHERE id = ?";
-    return jdbcTemplate.queryForObject(sql, new Object[]{id}, productMapper);
+    Product product = jdbcTemplate.queryForObject(sql, new Object[]{id}, productMapper);
+    String SQL = "SELECT id_category FROM products_categories WHERE id_product = "
+        + product.getId();
+    List<Long> categories = jdbcTemplate.query(SQL, new CategoryIdMapper());
+    product.setCategories(categories);
+    return product;
   }
 
   @Override
   public Long addProduct(Product product) {
     KeyHolder keyHolder = new GeneratedKeyHolder();
-    String sql = "INSERT INTO products (nameProduct,count,price,id_category) values (?,?,?,?)";
+    String sql = "INSERT INTO products (name,count,price) values (?,?,?)";
     jdbcTemplate.update(
         con -> {
           PreparedStatement pst =
               con.prepareStatement(sql,new String[]{"id"});
-          pst.setString(1, product.getNameProduct());
+          pst.setString(1, product.getName());
           pst.setInt(2, product.getCount());
           pst.setInt(3, product.getPrice());
-          pst.setLong(4, product.getCategories().get(0));
-//              con.createArrayOf("bigint",
-//                  new long[][]{product.getCategories().stream().mapToLong(i -> i).toArray()}));
           return pst;
         },
         keyHolder);
-    return (Long)keyHolder.getKey();
+    long id_product = (Long)keyHolder.getKey();
+    List<Long> categories = product.getCategories();
+    for (Long id_category : categories) {
+      jdbcTemplate.update("INSERT INTO products_categories (id_product,id_category)"
+              + " values (?,?)",
+          id_product,
+          id_category
+      );
+    }
+    return id_product;
   }
 
   @Override
-  public void deleteProduct(Product product) {
-    jdbcTemplate.update("DELETE FROM products WHERE id=" + product.getId());
+  public void deleteProduct(long id) {
+    jdbcTemplate.update("DELETE FROM products WHERE id=" + id);
   }
 
   @Override
   public void editProduct(Product product, long id) {
-    jdbcTemplate.update("UPDATE products SET nameProduct = ?,"
-            + " count = ?, price = ?, id_category =? WHERE id = ?",
-        product.getNameProduct(),
+    jdbcTemplate.update("UPDATE products SET name = ?,"
+            + " count = ?, price = ? WHERE id = ?",
+        product.getName(),
         product.getCount(),
         product.getPrice(),
-        product.getCategories().get(0),
         id);
+    List<Long> categories = product.getCategories();
+    for (Long id_category : categories) {
+      jdbcTemplate.update("INSERT INTO products_categories (id_product,id_category)"
+              + " values (?,?)",
+          id,
+          id_category
+      );
+    }
+
   }
 }

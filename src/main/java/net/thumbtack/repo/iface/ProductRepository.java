@@ -8,6 +8,6 @@ public interface ProductRepository {
   List<Product> getAllProducts();
   Product getProductById(long id);
   Long addProduct(Product product);
-  void deleteProduct(Product product);
+  void deleteProduct(long id);
   void editProduct (Product product, long id);
 }

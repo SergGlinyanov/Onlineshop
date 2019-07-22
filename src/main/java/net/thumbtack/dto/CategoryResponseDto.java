@@ -1,20 +1,20 @@
 package net.thumbtack.dto;
 
-public class ResponseCategoryDto {
+public class CategoryResponseDto {
 
   private long id;
   private String name;
   private long idParentCategory;
   private String parentName;
 
-  public ResponseCategoryDto(long id, String name, long idParentCategory, String parentName) {
+  public CategoryResponseDto(long id, String name, long idParentCategory, String parentName) {
     this.id = id;
     this.name = name;
     this.idParentCategory = idParentCategory;
     this.parentName = parentName;
   }
 
-  public ResponseCategoryDto() {
+  public CategoryResponseDto() {
   }
 
   public long getId() {

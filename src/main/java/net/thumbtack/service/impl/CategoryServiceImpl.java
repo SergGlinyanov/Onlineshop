@@ -1,7 +1,7 @@
 package net.thumbtack.service.impl;
 
 import java.util.List;
-import net.thumbtack.dto.ResponseCategoryDto;
+import net.thumbtack.dto.CategoryResponseDto;
 import net.thumbtack.model.Category;
 import net.thumbtack.repo.iface.CategoryRepository;
 import net.thumbtack.service.iface.CategoryService;
@@ -25,8 +25,8 @@ public class CategoryServiceImpl implements CategoryService {
   }
 
   @Override
-  public ResponseCategoryDto addCategory(Category category) {
-    return new ResponseCategoryDto(categoryRepository.addCategory(category),
+  public CategoryResponseDto addCategory(Category category) {
+    return new CategoryResponseDto(categoryRepository.addCategory(category),
         category.getName(), category.getIdParentCategory(),
         categoryRepository.getNameParentCategory(category.getIdParentCategory()));
   }

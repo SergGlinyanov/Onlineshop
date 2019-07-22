@@ -55,7 +55,7 @@ public class ProductServiceImplTest {
     List<Product> productList = underTest.getAllProducts();
     assertThat(productList, hasSize(products.size()));
 
-    underTest.deleteProduct(productList.get(0));
+    underTest.deleteProduct(1);
     List<Product> productList1 = underTest.getAllProducts();
     assertThat(productList1, hasSize(products.size()-1));
   }

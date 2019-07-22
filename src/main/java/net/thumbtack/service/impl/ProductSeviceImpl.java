@@ -26,12 +26,12 @@ public class ProductSeviceImpl implements ProductService {
   @Override
   public Product addProduct(Product product) {
     return new Product(productRepository.addProduct(product),
-        product.getNameProduct(), product.getPrice(), product.getCount(), product.getCategories());
+        product.getName(), product.getPrice(), product.getCount(), product.getCategories());
   }
 
   @Override
-  public void deleteProduct(Product product) {
-    productRepository.deleteProduct(product);
+  public void deleteProduct(long id) {
+    productRepository.deleteProduct(id);
   }
 
   @Override

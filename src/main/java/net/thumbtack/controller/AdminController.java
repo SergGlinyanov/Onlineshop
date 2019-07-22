@@ -1,7 +1,9 @@
 package net.thumbtack.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import net.thumbtack.dto.EditAdminDto;
-import net.thumbtack.dto.ResponseAdminDto;
+import net.thumbtack.dto.AdminResponseDto;
 import net.thumbtack.model.Admin;
 import net.thumbtack.service.iface.AdminService;
 import org.springframework.http.HttpStatus;
@@ -10,9 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/admins")
 public class AdminController {
 
   private final net.thumbtack.service.iface.AdminService adminService;
@@ -21,16 +25,24 @@ public class AdminController {
     this.adminService = adminService;
   }
 
-  @PostMapping(value = "api/admins")
-  public ResponseEntity<ResponseAdminDto> addAdmin(@RequestBody Admin admin) {
-    return new ResponseEntity<>(this.adminService.addAdmin(admin), HttpStatus.OK);
+  @PostMapping
+  public ResponseEntity<?> addAdmin(@RequestBody Admin admin,
+      HttpServletResponse response) {
+    Object responseClass = adminService.addAdmin(admin);
+    if (responseClass instanceof AdminResponseDto) {
+      Cookie cookie = new Cookie("role_id", "admin!" + ((AdminResponseDto) responseClass).getId());
+      response.addCookie(cookie);
+      return ResponseEntity.ok(responseClass);
+    }
+    else return new ResponseEntity<>(responseClass, HttpStatus.BAD_REQUEST);
   }
 
-  @PutMapping("api/admins/{id}")
-  public ResponseEntity<ResponseAdminDto> editAdmin(@RequestBody EditAdminDto editAdminDto, @PathVariable long id){
+  @PutMapping("/{id}")
+  public ResponseEntity<AdminResponseDto> editAdmin(@RequestBody EditAdminDto editAdminDto,
+      @PathVariable long id){
     adminService.editAdmin(editAdminDto, id);
-    ResponseAdminDto responseAdminDto = new ResponseAdminDto(id, editAdminDto.getLastName(),
+    AdminResponseDto adminResponseDto = new AdminResponseDto(id, editAdminDto.getLastName(),
         editAdminDto.getFirstName(), editAdminDto.getPatronymic(), editAdminDto.getPosition());
-    return new ResponseEntity<>(responseAdminDto, HttpStatus.OK);
+    return new ResponseEntity<>(adminResponseDto, HttpStatus.OK);
   }
 }

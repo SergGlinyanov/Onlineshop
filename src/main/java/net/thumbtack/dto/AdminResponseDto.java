@@ -1,6 +1,6 @@
 package net.thumbtack.dto;
 
-public class ResponseAdminDto {
+public class AdminResponseDto {
 
   private long id;
   private String lastName;
@@ -8,7 +8,7 @@ public class ResponseAdminDto {
   private String patronymic;
   private String position;
 
-  public ResponseAdminDto(long id, String lastName, String firstName, String patronymic,
+  public AdminResponseDto(long id, String lastName, String firstName, String patronymic,
       String position) {
     this.id = id;
     this.lastName = lastName;
@@ -17,7 +17,7 @@ public class ResponseAdminDto {
     this.position = position;
   }
 
-  public ResponseAdminDto() {
+  public AdminResponseDto() {
   }
 
   public long getId() {
