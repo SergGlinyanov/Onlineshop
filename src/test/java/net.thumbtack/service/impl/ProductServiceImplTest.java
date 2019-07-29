@@ -2,7 +2,7 @@ package net.thumbtack.service.impl;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -11,62 +11,63 @@ import java.util.List;
 import net.thumbtack.model.Product;
 import net.thumbtack.repo.iface.ProductRepository;
 import net.thumbtack.service.iface.ProductService;
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class ProductServiceImplTest {
 
-  private ProductService underTest;
+  @Autowired
+  private ProductService productService;
 
-  @Captor
-  private ArgumentCaptor<Product> captor;
-
-  @Mock
+  @MockBean
   private ProductRepository productRepository;
 
-  @Before
-  public void setUp() {
-    MockitoAnnotations.initMocks(this);
-    underTest = new ProductSeviceImpl(productRepository);
-  }
+  @Captor
+  public ArgumentCaptor<Product> captor;
 
   @Test
-  public void testAddProduct() {
-    Product product = new Product( 1, "Trausers", 100);
-    underTest.addProduct(product);
-    verify(productRepository).addProduct(captor.capture());
-    Product value = captor.getValue();
-    assertEquals(product.getId(), value.getId());
-  }
-
-  @Ignore
-  @Test
-  public void testGetAllProductAndDeleteProduct() {
+  public void testGetAllProducts() {
     List<Product> products = Arrays.asList(
         new Product( 1, "Trausers", 1),
         new Product( 2, "Trausers", 1)
     );
     when(productRepository.getAllProducts()).thenReturn(products);
-    List<Product> productList = underTest.getAllProducts();
-    assertThat(productList, hasSize(products.size()));
-
-    underTest.deleteProduct(1);
-    List<Product> productList1 = underTest.getAllProducts();
-    assertThat(productList1, hasSize(products.size()-1));
+    List<Product> productList = productService.getAllProducts();
+    assertEquals(productList.size(), products.size());
   }
 
-  @Ignore
   @Test
   public void testGetProductById() {
-    Product category = new Product( 1, "Trausers", 1);
-    underTest.getProductById(1);//в постмане всё работает, что сделал неправильно???
-    verify(productRepository).getProductById(1);
-    Product value = captor.getValue();
-    assertEquals(category.getId(), value.getId());
+    Product product = new Product( 1, "Trausers", 100);
+    when(productRepository.getProductById(1)).thenReturn(product);
+    Product response = productService.getProductById(1);
+    assertEquals(product.getName(), response.getName());
+  }
+
+  @Test
+  public void testAddProduct() {
+    Product product = new Product( 1, "Trausers", 100);
+    when(productRepository.addProduct(product)).thenReturn((long)1);
+    Product response = productService.addProduct(product);
+    assertEquals(product.getName(), response.getName());
+  }
+
+  @Test
+  public void testDeleteProduct() {
+    productService.deleteProduct(1);
+  }
+
+  @Test
+  public void testEditProduct() {
+    Product product = new Product( 1, "Trausers", 100);
+    productService.editProduct(product, 1);
   }
 }

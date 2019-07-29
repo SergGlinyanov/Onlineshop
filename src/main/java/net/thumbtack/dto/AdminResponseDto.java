@@ -1,5 +1,7 @@
 package net.thumbtack.dto;
 
+import net.thumbtack.model.Admin;
+
 public class AdminResponseDto {
 
   private long id;
@@ -15,6 +17,14 @@ public class AdminResponseDto {
     this.firstName = firstName;
     this.patronymic = patronymic;
     this.position = position;
+  }
+
+  public AdminResponseDto(Admin admin) {
+    this.id = admin.getId();
+    this.lastName = admin.getLastName();
+    this.firstName = admin.getFirstName();
+    this.patronymic = admin.getPatronymic();
+    this.position = admin.getPosition();
   }
 
   public AdminResponseDto() {

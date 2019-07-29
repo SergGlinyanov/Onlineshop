@@ -29,16 +29,19 @@ public class BasketsController {
   public ResponseEntity<?> addItemInBasket
       (@RequestBody ProductDto productDto,
           @CookieValue(value = "role_id", required = false) Cookie cookieName) {
-    return new ResponseEntity<>
-        (clientService.addItemInBasket(productDto, cookieName), HttpStatus.OK);
+    Object responseClass = clientService.addItemInBasket(productDto, cookieName);
+    if (responseClass instanceof ProductDto) {
+      return ResponseEntity.ok(responseClass);
+    }
+    else return new ResponseEntity<>(responseClass, HttpStatus.BAD_REQUEST);
   }
 
   @DeleteMapping("/{id}")
-  public ResponseEntity<String> deleteItemFromBasket
+  public ResponseEntity<Void> deleteItemFromBasket
       (@PathVariable long id,
           @CookieValue(value = "role_id", required = false) Cookie cookieName) {
     clientService.deleteItemFromBasket(id, cookieName);
-    return new  ResponseEntity<>("{}", HttpStatus.OK);
+    return new ResponseEntity<>(HttpStatus.OK);
   }
 
   @PutMapping

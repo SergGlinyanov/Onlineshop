@@ -38,11 +38,12 @@ public class AdminController {
   }
 
   @PutMapping("/{id}")
-  public ResponseEntity<AdminResponseDto> editAdmin(@RequestBody EditAdminDto editAdminDto,
+  public ResponseEntity<?> editAdmin(@RequestBody EditAdminDto editAdminDto,
       @PathVariable long id){
-    adminService.editAdmin(editAdminDto, id);
-    AdminResponseDto adminResponseDto = new AdminResponseDto(id, editAdminDto.getLastName(),
-        editAdminDto.getFirstName(), editAdminDto.getPatronymic(), editAdminDto.getPosition());
-    return new ResponseEntity<>(adminResponseDto, HttpStatus.OK);
+    Object response = adminService.editAdmin(editAdminDto, id);
+    if (response instanceof AdminResponseDto) {
+      return ResponseEntity.ok(response);
+    }
+    else return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
   }
 }

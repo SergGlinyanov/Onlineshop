@@ -1,6 +1,7 @@
 package net.thumbtack.model;
 
 import java.util.List;
+import net.thumbtack.dto.ClientRegistrationDto;
 
 public class Client {
 
@@ -27,6 +28,18 @@ public class Client {
     this.phone = phone;
     this.login = login;
     this.password = password;
+  }
+
+  public Client(ClientRegistrationDto clientRegistrationDto) {
+    this.id = clientRegistrationDto.getId();
+    this.lastName = clientRegistrationDto.getLastName();
+    this.firstName = clientRegistrationDto.getFirstName();
+    this.patronymic = clientRegistrationDto.getPatronymic();
+    this.email = clientRegistrationDto.getEmail();
+    this.address = clientRegistrationDto.getAddress();
+    this.phone = clientRegistrationDto.getPhone();
+    this.login = clientRegistrationDto.getLogin();
+    this.password = clientRegistrationDto.getPassword();
   }
 
   public Client() {

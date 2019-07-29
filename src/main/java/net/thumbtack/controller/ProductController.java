@@ -4,7 +4,6 @@ import java.util.List;
 import net.thumbtack.model.Product;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -54,5 +53,4 @@ public class ProductController {
     productService.editProduct(product, id);
     return new ResponseEntity<>(productService.getProductById(id), HttpStatus.OK);
   }
-
 }

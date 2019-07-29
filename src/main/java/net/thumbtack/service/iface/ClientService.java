@@ -5,6 +5,7 @@ import javax.servlet.http.Cookie;
 import net.thumbtack.dto.ClientListDto;
 import net.thumbtack.dto.ClientRegistrationDto;
 import net.thumbtack.dto.ClientResponseDto;
+import net.thumbtack.dto.EditClientDto;
 import net.thumbtack.dto.ProductDto;
 import net.thumbtack.exception.ErrorList;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,8 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 public interface ClientService {
 
   Object addClient(ClientRegistrationDto clientRegistrationDto);
+  Object editClient(EditClientDto editClientDto, long id);
   List<ClientListDto> getAllClients();
-  ClientResponseDto toDeposit(String deposit, Cookie cookie);
+  Object toDeposit(String deposit, Cookie cookie);
   ClientResponseDto getDeposit(Cookie cookie);
   ErrorList purchaseProduct(ProductDto productDto, Cookie cookie);
   Object addItemInBasket(ProductDto productDto, Cookie cookie);

@@ -4,10 +4,12 @@ import net.thumbtack.repo.iface.AdminRepository;
 import net.thumbtack.repo.iface.CategoryRepository;
 import net.thumbtack.repo.iface.ProductRepository;
 import net.thumbtack.repo.iface.ClientRepository;
+import net.thumbtack.repo.iface.UtilityRepository;
 import net.thumbtack.repo.impl.AdminRepositoryImpl;
 import net.thumbtack.repo.impl.CategoryRepositoryImpl;
 import net.thumbtack.repo.impl.ProductRepositoryImpl;
 import net.thumbtack.repo.impl.ClientRepositoryImpl;
+import net.thumbtack.repo.impl.UtilityRepositoryImpl;
 import net.thumbtack.repo.mapper.AdminMapper;
 import net.thumbtack.repo.mapper.CategoryMapper;
 import net.thumbtack.repo.mapper.ProductMapper;
@@ -17,10 +19,12 @@ import net.thumbtack.service.iface.AdminService;
 import net.thumbtack.service.iface.CategoryService;
 import net.thumbtack.service.iface.ProductService;
 import net.thumbtack.service.iface.ClientService;
+import net.thumbtack.service.iface.UtilityService;
 import net.thumbtack.service.impl.AdminServiceImpl;
 import net.thumbtack.service.impl.CategoryServiceImpl;
-import net.thumbtack.service.impl.ProductSeviceImpl;
+import net.thumbtack.service.impl.ProductServiceImpl;
 import net.thumbtack.service.impl.ClientServiceImpl;
+import net.thumbtack.service.impl.UtilityServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -54,6 +58,16 @@ public class Config {
   }
 
   @Bean
+  public UtilityRepository utilityRepository(JdbcTemplate jdbcTemplate){
+    return new UtilityRepositoryImpl(jdbcTemplate);
+  }
+
+  @Bean
+  public UtilityService utilityService(UtilityRepository utilityRepository){
+    return new UtilityServiceImpl(utilityRepository);
+  }
+
+  @Bean
   public ProductRepository productRepository(JdbcTemplate jdbcTemplate,
       ProductMapper productMapper) {
     return new ProductRepositoryImpl(jdbcTemplate, productMapper);
@@ -61,7 +75,7 @@ public class Config {
 
   @Bean
   public ProductService productService(ProductRepository productRepository) {
-    return new ProductSeviceImpl(productRepository);
+    return new ProductServiceImpl(productRepository);
   }
 
 

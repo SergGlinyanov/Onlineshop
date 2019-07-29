@@ -5,9 +5,12 @@ import net.thumbtack.model.Admin;
 
 public interface AdminRepository {
 
-  Long addAdmin(Admin admin);
-  void editAdmin(EditAdminDto editAdminDto, long id);
+  Object addAdmin(Admin admin);
+  Object editAdmin(EditAdminDto editAdminDto, long id);
   Admin getAdminById(long id);
+  Object clientPurchases(long id);
+  Object categoryPurchases(long id);
+  Object productPurchases(long id);
 
 
 

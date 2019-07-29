@@ -20,4 +20,11 @@ List<MyError> errors;
   public void setErrors(List<MyError> errors) {
     this.errors = errors;
   }
+
+  @Override
+  public String toString() {
+    return "ErrorList{" +
+        "errors=" + errors +
+        '}';
+  }
 }

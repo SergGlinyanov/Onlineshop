@@ -5,11 +5,11 @@ import net.thumbtack.model.Product;
 import net.thumbtack.repo.iface.ProductRepository;
 import net.thumbtack.service.iface.ProductService;
 
-public class ProductSeviceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService {
 
   private final ProductRepository productRepository;
 
-  public ProductSeviceImpl(ProductRepository productRepository) {
+  public ProductServiceImpl(ProductRepository productRepository) {
     this.productRepository = productRepository;
   }
 

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import net.thumbtack.dto.ClientListDto;
+import net.thumbtack.dto.ClientResponseDto;
+import net.thumbtack.dto.EditClientDto;
 import net.thumbtack.dto.ProductDto;
 import net.thumbtack.dto.PurchaseFromBasketDto;
 import net.thumbtack.exception.ErrorList;
@@ -34,28 +36,105 @@ public class ClientRepositoryImpl implements ClientRepository {
   }
 
   @Override
-  public Long addClient(Client client) {
-    KeyHolder keyHolder = new GeneratedKeyHolder();
-    String sql = "INSERT INTO clients (lastName,firstName,patronymic,email,"
-        + "postalAddress,phoneNumber,login,password) values (?,?,?,?,?,?,?,?)";
-    jdbcTemplate.update(
-        con -> {
-          PreparedStatement pst =
-              con.prepareStatement(sql, new String[]{"id"});
-          pst.setString(1, client.getLastName());
-          pst.setString(2, client.getFirstName());
-          pst.setString(3, client.getPatronymic());
-          pst.setString(4, client.getEmail());
-          pst.setString(5, client.getAddress());
-          pst.setString(6, client.getPhone());
-          pst.setString(7, client.getLogin());
-          pst.setString(8, client.getPassword());
-          return pst;
-        },
-        keyHolder);
-    Long id = (Long) keyHolder.getKey();
-    jdbcTemplate.update("INSERT INTO deposits (id_client,summ) values (?,?)", id, 0);
-    return id;
+  public Object addClient(Client client) {
+    int check = 0;
+    List<MyError> errors = new ArrayList<>();
+    List<String> logins = new ArrayList<>();
+    List<Map<String, Object>> rows = jdbcTemplate.queryForList("SELECT login FROM clients");
+    rows.forEach(row -> {
+      String login = (String) row.get("login");
+      logins.add(login);
+    });
+    if (logins.contains(client.getLogin())) {
+      errors.add(new MyError("LOGIN_ALREADY_EXISTS",
+          "login", "Пользователь с таким логином уже есть."));
+      check++;
+    }
+    if (!client.getLastName().matches("^[а-яА-ЯёЁ]+$")
+        || !client.getFirstName().matches("^[а-яА-ЯёЁ]+$")
+        || !client.getPatronymic().matches("^[а-яА-ЯёЁ]+$")) {
+      errors.add(new MyError("WRONG_FORMAT",
+          "Ф.И.О.", "Только кириллица."));
+      check++;
+    }
+    if (check == 0) {
+      KeyHolder keyHolder = new GeneratedKeyHolder();
+      String sql = "INSERT INTO clients (lastName,firstName,patronymic,email,"
+          + "postalAddress,phoneNumber,login,password) values (?,?,?,?,?,?,?,?)";
+      jdbcTemplate.update(
+          con -> {
+            PreparedStatement pst =
+                con.prepareStatement(sql, new String[]{"id"});
+            pst.setString(1, client.getLastName());
+            pst.setString(2, client.getFirstName());
+            pst.setString(3, client.getPatronymic());
+            pst.setString(4, client.getEmail());
+            pst.setString(5, client.getAddress());
+            pst.setString(6, client.getPhone());
+            pst.setString(7, client.getLogin());
+            pst.setString(8, client.getPassword());
+            return pst;
+          },
+          keyHolder);
+      Long id = (Long) keyHolder.getKey();
+      jdbcTemplate.update("INSERT INTO deposits (id_client,summ) values (?,?)", id, 0);
+      return id;
+    } else {
+      return new ErrorList(errors);
+    }
+  }
+
+  @Override
+  public Object editClient(EditClientDto editClientDto, long id) {
+    int check = 0;
+    List<MyError> errors = new ArrayList<>();
+    List<Long> idClients = new ArrayList<>();
+    List<Map<String, Object>> rowsClient = jdbcTemplate.queryForList("SELECT id FROM clients");
+    rowsClient.forEach(row -> {
+      long idClient = (long) row.get("id");
+      idClients.add(idClient);
+    });
+    if (!idClients.contains(id)) {
+      errors.add(new MyError("WRONG_ID",
+          "id", "Нет пользователя с ID = " + id));
+      return new ErrorList(errors);
+    } else {
+      Integer deposit = jdbcTemplate.queryForObject
+          ("SELECT summ FROM deposits WHERE id_client = " + id, Integer.class);
+      String oldPassword = jdbcTemplate.queryForObject
+          ("SELECT password FROM clients WHERE id = " + id, String.class);
+      if (!editClientDto.getOldPassword().equals(oldPassword)) {
+        errors.add(new MyError("WRONG_PASSWORD",
+            "oldPassword", "Неверный пароль."));
+        check++;
+      }
+
+      if (!editClientDto.getLastName().matches("^[а-яА-ЯёЁ]+$")
+          || !editClientDto.getFirstName().matches("^[а-яА-ЯёЁ]+$")
+          || !editClientDto.getPatronymic().matches("^[а-яА-ЯёЁ]+$")) {
+        errors.add(new MyError("WRONG_FORMAT",
+            "Ф.И.О.", "Только кириллица."));
+        check++;
+      }
+      if (check == 0) {
+        jdbcTemplate.update("UPDATE clients SET lastName = ?,"
+                + " firstName = ?, patronymic = ?, email =?, "
+                + "postalAddress=?, phoneNumber=?, password =? WHERE id = ?",
+            editClientDto.getLastName(),
+            editClientDto.getFirstName(),
+            editClientDto.getPatronymic(),
+            editClientDto.getEmail(),
+            editClientDto.getAddress(),
+            editClientDto.getPhone(),
+            editClientDto.getNewPassword(),
+            id);
+        return new ClientResponseDto(id, editClientDto.getLastName(), editClientDto.getFirstName(),
+            editClientDto.getPatronymic(), editClientDto.getEmail(), editClientDto.getAddress(),
+            editClientDto.getPhone(), deposit);
+      } else {
+        return new ErrorList(errors);
+      }
+    }
   }
 
   @Override
@@ -79,18 +158,31 @@ public class ClientRepositoryImpl implements ClientRepository {
   }
 
   @Override
-  public Client toDeposit(long idClient, int deposit) {
-    String sql = "SELECT * FROM clients WHERE id = ?";
-    int oldSumm = jdbcTemplate.queryForObject("SELECT summ FROM deposits WHERE id_client = ?",
-        new Object[]{idClient}, Integer.class);
-    int newSumm = oldSumm + deposit;
-    jdbcTemplate.update("UPDATE deposits SET summ = ? WHERE id_client = ?",
-        newSumm, idClient);
-    Client client = jdbcTemplate.queryForObject(sql, new Object[]{idClient}, clientMapper);
-    client.setDeposit(jdbcTemplate.queryForObject
-        ("SELECT summ FROM deposits WHERE id_client = ?",
-            new Object[]{idClient}, Integer.class));
-    return client;
+  public Object toDeposit(long idClient, int deposit) {
+    List<MyError> errors = new ArrayList<>();
+    List<Long> idClients = new ArrayList<>();
+    List<Map<String, Object>> rowsClient = jdbcTemplate.queryForList("SELECT id FROM clients");
+    rowsClient.forEach(row -> {
+      long idClientFromDataBase = (long) row.get("id");
+      idClients.add(idClientFromDataBase);
+    });
+    if (!idClients.contains(idClient)) {
+      errors.add(new MyError("INVALID_ACCOUNT",
+          "", "Зарегистрируйтесь на сервере."));
+      return new ErrorList(errors);
+    } else {
+      String sql = "SELECT * FROM clients WHERE id = ?";
+      int oldSumm = jdbcTemplate.queryForObject("SELECT summ FROM deposits WHERE id_client = ?",
+          new Object[]{idClient}, Integer.class);
+      int newSumm = oldSumm + deposit;
+      jdbcTemplate.update("UPDATE deposits SET summ = ? WHERE id_client = ?",
+          newSumm, idClient);
+      Client client = jdbcTemplate.queryForObject(sql, new Object[]{idClient}, clientMapper);
+      client.setDeposit(jdbcTemplate.queryForObject
+          ("SELECT summ FROM deposits WHERE id_client = ?",
+              new Object[]{idClient}, Integer.class));
+      return client;
+    }
   }
 
   @Override
@@ -132,8 +224,30 @@ public class ClientRepositoryImpl implements ClientRepository {
     if (check == 0) {
       jdbcTemplate.update("UPDATE products SET count = ? WHERE id = ?",
           newCount, productDto.getId());
+      List<Long> idProducts = jdbcTemplate.query
+          ("SELECT id_product FROM purchases WHERE id_client = " + idClient, new BasketMapper());
+      if (idProducts.contains(productDto.getId())) {
+        int oldCountPurchase = jdbcTemplate.queryForObject
+            ("SELECT count FROM purchases WHERE id_product = " + productDto.getId(), Integer.class);
+        int newCountPurchse = oldCountPurchase + productDto.getCount();
+        jdbcTemplate.update("UPDATE purchases SET count = ? WHERE id_product = ?",
+            newCountPurchse, productDto.getId());
+
+      } else {
+        jdbcTemplate.update
+            ("INSERT INTO purchases (id_client,id_product,name,price,count) values (?,?,?,?,?)"
+                ,
+                idClient,
+                productDto.getId(),
+                productDto.getName(),
+                productDto.getPrice(),
+                productDto.getCount()
+            );
+      }
       errorList = null;
-    } else {
+    } else
+
+    {
       errorList = new ErrorList(errors);
     }
     return errorList;
@@ -322,23 +436,13 @@ public class ClientRepositoryImpl implements ClientRepository {
       }
     }
 
-    //Проверка наличия товара на складе
-    List<Long> idProductFromBasketInDataBaseList = jdbcTemplate.query
-        ("SELECT id FROM products", new IdMapper());
-    for (ProductDto productDto : productDtoList) {
-      if (idProductFromBasketInDataBaseList.contains(productDto.getId())){
-        bought.add(productDto);
-      }
-      else remaining.add(productDto);
-    }
-
     //Проверка необходимой для покупки суммы на депозите
     int deposit = jdbcTemplate.queryForObject
         ("SELECT summ FROM deposits WHERE id_client = ?",
             new Object[]{idClient}, Integer.class);
     int summ = 0;
     for (ProductDto productDto : bought) {
-      summ = summ + productDto.getPrice()*productDto.getCount();
+      summ = summ + productDto.getPrice() * productDto.getCount();
     }
     if (summ > deposit) {
       errors.add(new MyError("MONEY_LESS",
@@ -346,7 +450,40 @@ public class ClientRepositoryImpl implements ClientRepository {
       check++;
     }
 
-    if (check == 0){
+    //Проверка наличия товара на складе и покупка
+    List<Long> idProductFromBasketInDataBaseList = jdbcTemplate.query
+        ("SELECT id FROM products", new IdMapper());
+    for (ProductDto productDto : productDtoList) {
+      if (idProductFromBasketInDataBaseList.contains(productDto.getId())) {
+        bought.add(productDto);
+        jdbcTemplate.update("DELETE FROM baskets WHERE id=" + productDto.getId());
+        List<Long> idProducts = jdbcTemplate.query
+            ("SELECT id_product FROM purchases WHERE id_client = " + idClient, new BasketMapper());
+        if (idProducts.contains(productDto.getId())) {
+          int oldCountPurchase = jdbcTemplate.queryForObject
+              ("SELECT count FROM purchases WHERE id_product = " + productDto.getId(),
+                  Integer.class);
+          int newCountPurchse = oldCountPurchase + productDto.getCount();
+          jdbcTemplate.update("UPDATE purchases SET count = ? WHERE id_product = ?",
+              newCountPurchse, productDto.getId());
+
+        } else {
+          jdbcTemplate.update
+              ("INSERT INTO purchases (id_client,id_product,name,price,count) values (?,?,?,?,?)"
+                  ,
+                  idClient,
+                  productDto.getId(),
+                  productDto.getName(),
+                  productDto.getPrice(),
+                  productDto.getCount()
+              );
+        }
+      } else {
+        remaining.add(productDto);
+      }
+    }
+
+    if (check == 0) {
       return new PurchaseFromBasketDto(bought, remaining);
     } else {
       return new ErrorList(errors);

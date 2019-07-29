@@ -60,7 +60,7 @@ public class ProductControllerTest {
     assertEquals(HttpStatus.OK, underTest.deleteProduct(1).getStatusCode());
   }
 
-  @Ignore
+  //@Ignore
   @Test
   public void testGetProductById() {
     Product product = new Product( 1, "Trausers", 1);

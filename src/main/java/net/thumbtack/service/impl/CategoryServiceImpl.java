@@ -27,8 +27,8 @@ public class CategoryServiceImpl implements CategoryService {
   @Override
   public CategoryResponseDto addCategory(Category category) {
     return new CategoryResponseDto(categoryRepository.addCategory(category),
-        category.getName(), category.getIdParentCategory(),
-        categoryRepository.getNameParentCategory(category.getIdParentCategory()));
+        category.getName(), category.getParentId(),
+        categoryRepository.getNameParentCategory(category.getParentId()));
   }
 
   @Override

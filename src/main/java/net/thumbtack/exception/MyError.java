@@ -38,4 +38,13 @@ public class MyError {
   public void setMessage(String message) {
     this.message = message;
   }
+
+  @Override
+  public String toString() {
+    return "MyError{" +
+        "errorCode='" + errorCode + '\'' +
+        ", field='" + field + '\'' +
+        ", message='" + message + '\'' +
+        '}';
+  }
 }

@@ -4,12 +4,12 @@ public class Category {
 
   private long id;
   private String name;
-  private long idParentCategory;
+  private long parentId;
 
-  public Category(long id, String name, long idParentCategory) {
+  public Category(long id, String name, long parentId) {
     this.id = id;
     this.name = name;
-    this.idParentCategory = idParentCategory;
+    this.parentId = parentId;
   }
 
   public Category() {
@@ -31,12 +31,12 @@ public class Category {
     this.name = name;
   }
 
-  public long getIdParentCategory() {
-    return idParentCategory;
+  public long getParentId() {
+    return parentId;
   }
 
-  public void setIdParentCategory(long idParentCategory) {
-    this.idParentCategory = idParentCategory;
+  public void setParentId(long parentId) {
+    this.parentId = parentId;
   }
 
   @Override
@@ -44,7 +44,7 @@ public class Category {
     return "Category{" +
         "id=" + id +
         ", name='" + name + '\'' +
-        ", idParentCategory=" + idParentCategory +
+        ", parentId=" + parentId +
         '}';
   }
 }

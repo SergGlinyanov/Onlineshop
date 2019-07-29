@@ -6,7 +6,10 @@ import net.thumbtack.model.Admin;
 public interface AdminService {
 
   Object addAdmin(Admin admin) ;
-  void editAdmin(EditAdminDto editAdminDto,long id);
+  Object editAdmin(EditAdminDto editAdminDto,long id);
+  Object clientPurchases(long id);
+  Object categoryPurchases(long id);
+  Object productPurchases(long id);
 
 
 

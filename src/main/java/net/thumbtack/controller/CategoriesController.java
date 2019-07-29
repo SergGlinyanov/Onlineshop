@@ -30,15 +30,16 @@ public class CategoriesController {
   public ResponseEntity<CategoryResponseDto> getCategoryById(@PathVariable long id) {
     Category category = categoryService.getCategoryById(id);
     CategoryResponseDto categoryResponseDto = new CategoryResponseDto(category.getId(),
-        category.getName(), category.getIdParentCategory(),
-        categoryService.getNameParentCategory(category.getIdParentCategory()));
+        category.getName(), category.getParentId(),
+        categoryService.getNameParentCategory(category.getParentId()));
     return new ResponseEntity<>(categoryResponseDto, HttpStatus.OK);
   }
 
   @DeleteMapping("/{id}")
-  public void deleteCategory(@PathVariable long id) {
+  public ResponseEntity<String> deleteCategory(@PathVariable long id) {
     Category category = categoryService.getCategoryById(id);
     categoryService.deleteCategory(category);
+    return  new ResponseEntity<>("{}",HttpStatus.OK);
   }
 
   @PostMapping
@@ -52,8 +53,8 @@ public class CategoriesController {
     List<CategoryResponseDto> categoryResponseDtoList = new ArrayList<>();
     for (Category category: categories){
       categoryResponseDtoList.add(new CategoryResponseDto(category.getId(),
-          category.getName(), category.getIdParentCategory(),
-          categoryService.getNameParentCategory(category.getIdParentCategory())));
+          category.getName(), category.getParentId(),
+          categoryService.getNameParentCategory(category.getParentId())));
     }
     return new ResponseEntity<>(categoryResponseDtoList, HttpStatus.OK);
   }
@@ -63,8 +64,8 @@ public class CategoriesController {
       (@RequestBody Category category, @PathVariable long id){
     categoryService.editCategory(category, id);
     CategoryResponseDto categoryResponseDto = new CategoryResponseDto(id,
-        category.getName(), category.getIdParentCategory(),
-        categoryService.getNameParentCategory(category.getIdParentCategory()));
+        category.getName(), category.getParentId(),
+        categoryService.getNameParentCategory(category.getParentId()));
     return new ResponseEntity<>(categoryResponseDto, HttpStatus.OK);
   }
 }

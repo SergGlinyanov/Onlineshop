@@ -1,5 +1,7 @@
 package net.thumbtack.dto;
 
+import net.thumbtack.model.Client;
+
 public class ClientResponseDto {
 
   private long id;
@@ -21,6 +23,17 @@ public class ClientResponseDto {
     this.address = address;
     this.phone = phone;
     this.deposit = deposit;
+  }
+
+  public ClientResponseDto(Client client) {
+    this.id = client.getId();
+    this.lastName = client.getLastName();
+    this.firstName = client.getFirstName();
+    this.patronymic = client.getPatronymic();
+    this.email = client.getEmail();
+    this.address = client.getAddress();
+    this.phone = client.getPhone();
+    this.deposit = client.getDeposit();
   }
 
   public ClientResponseDto() {

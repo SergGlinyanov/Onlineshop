@@ -9,7 +9,7 @@ CREATE TABLE `products` (
 CREATE TABLE `categories` (
 	`id` bigint NOT NULL AUTO_INCREMENT,
 	`nameCategory` varchar(255) NOT NULL,
-	`id_parent_category` bigint NOT NULL,
+	`parentId` bigint NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -55,14 +55,26 @@ CREATE TABLE `deposits` (
 	`summ` int
 );
 
-ALTER TABLE `categories` ADD CONSTRAINT `categories_fk0` FOREIGN KEY (`id_parent_category`) REFERENCES `categories`(`id`) ON UPDATE CASCADE ON DELETE CASCADE;
+CREATE TABLE `purchases` (
+	`id_client` bigint NOT NULL,
+	`id_product` bigint NOT NULL,
+	`name` varchar(255) NOT NULL,
+	`price` int NOT NULL,
+	`count` int NOT NULL
+);
+
+ALTER TABLE `categories` ADD CONSTRAINT `categories_fk0` FOREIGN KEY (`parentId`) REFERENCES `categories`(`id`);
 
 ALTER TABLE `baskets` ADD CONSTRAINT `baskets_fk0` FOREIGN KEY (`id_client`) REFERENCES `clients`(`id`);
 
-ALTER TABLE `baskets` ADD CONSTRAINT `baskets_fk1` FOREIGN KEY (`id_product`) REFERENCES `products`(`id`) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE `baskets` ADD CONSTRAINT `baskets_fk1` FOREIGN KEY (`id_product`) REFERENCES `products`(`id`);
 
-ALTER TABLE `products_categories` ADD CONSTRAINT `products_categories_fk0` FOREIGN KEY (`id_product`) REFERENCES `products`(`id`) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE `products_categories` ADD CONSTRAINT `products_categories_fk0` FOREIGN KEY (`id_product`) REFERENCES `products`(`id`);
 
-ALTER TABLE `products_categories` ADD CONSTRAINT `products_categories_fk1` FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE `products_categories` ADD CONSTRAINT `products_categories_fk1` FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`);
 
 ALTER TABLE `deposits` ADD CONSTRAINT `deposits_fk0` FOREIGN KEY (`id_client`) REFERENCES `clients`(`id`);
+
+ALTER TABLE `purchases` ADD CONSTRAINT `purchases_fk0` FOREIGN KEY (`id_client`) REFERENCES `clients`(`id`);
+
+ALTER TABLE `purchases` ADD CONSTRAINT `purchases_fk1` FOREIGN KEY (`id_product`) REFERENCES `products`(`id`);

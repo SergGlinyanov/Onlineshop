@@ -35,13 +35,13 @@ public class CategoryRepositoryImpl implements CategoryRepository {
   @Override
   public Long addCategory(Category category) {
     KeyHolder keyHolder = new GeneratedKeyHolder();
-    String sql = "INSERT INTO categories (nameCategory, id_parent_category) values (?,?)";
+    String sql = "INSERT INTO categories (nameCategory, parentId) values (?,?)";
     jdbcTemplate.update(
         con -> {
           PreparedStatement pst =
               con.prepareStatement(sql,new String[]{"id"});
           pst.setString(1, category.getName());
-          pst.setLong(2, category.getIdParentCategory());
+          pst.setLong(2, category.getParentId());
           return pst;
         },
         keyHolder);
@@ -57,7 +57,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
       Category category = new Category();
       category.setId((long)row.get("id"));
       category.setName((String)row.get("nameCategory"));
-      category.setIdParentCategory(((long) row.get("id_parent_category")));
+      category.setParentId(((long) row.get("parentId")));
       result.add(category);
     });
     return result;
@@ -72,9 +72,9 @@ public class CategoryRepositoryImpl implements CategoryRepository {
   @Override
   public void editCategory(Category category, long id) {
     jdbcTemplate.update("UPDATE categories SET nameCategory = ?,"
-            + " id_parent_category = ? WHERE id = ?",
+            + " parentId = ? WHERE id = ?",
         category.getName(),
-        category.getIdParentCategory(),
+        category.getParentId(),
         id);
   }
 

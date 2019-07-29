@@ -20,21 +20,35 @@ public class AdminServiceImpl implements AdminService {
 
   @Override
   public Object addAdmin(Admin admin) {
-    List<MyError> errors = new ArrayList<>();
-    if(!admin.getLastName().matches("^[а-яА-ЯёЁ]+$")
-        ||!admin.getFirstName().matches("^[а-яА-ЯёЁ]+$")
-        ||!admin.getPatronymic().matches("^[а-яА-ЯёЁ]+$")){
-      errors.add(new MyError("WRONG_FORMAT",
-          "Ф.И.О.", "Только кириллица."));
-      return new ErrorList(errors);
+    Object responseFromDataBase = adminRepository.addAdmin(admin);
+    Object response = null;
+    if (responseFromDataBase instanceof Long) {
+      admin.setId((long)responseFromDataBase);
+      response = new AdminResponseDto(admin);
     }
-    else return new AdminResponseDto(adminRepository.addAdmin(admin),
-        admin.getLastName(), admin.getFirstName(), admin.getPatronymic(),
-        admin.getPosition());
+    if (responseFromDataBase instanceof ErrorList) {
+      response = responseFromDataBase;
+    }
+    return response;
   }
 
   @Override
-  public void editAdmin(EditAdminDto editAdminDto, long id) {
-    adminRepository.editAdmin(editAdminDto, id);
+  public Object editAdmin(EditAdminDto editAdminDto, long id) {
+    return adminRepository.editAdmin(editAdminDto, id);
+  }
+
+  @Override
+  public Object clientPurchases(long id) {
+    return adminRepository.clientPurchases(id);
+  }
+
+  @Override
+  public Object categoryPurchases(long id) {
+    return adminRepository.categoryPurchases(id);
+  }
+
+  @Override
+  public Object productPurchases(long id) {
+    return adminRepository.productPurchases(id);
   }
 }

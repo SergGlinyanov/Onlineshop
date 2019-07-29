@@ -32,9 +32,7 @@ public class AdminEndToEndTest {
   private AdminRepository adminRepository;
 
   @Test
-  public void AdminWorksThroughAllLayers() throws Exception {
-
-    //addAdmin E2E test
+  public void TestAddAdmin() throws Exception {
     Admin admin = new Admin((long)2,"Иванов", "Иван",
         "Иванович", "ivanov", "qwerty", "admin");
 
@@ -43,13 +41,22 @@ public class AdminEndToEndTest {
             .content(objectMapper.writeValueAsString(admin)))
             .andExpect(status().isOk());
 
-    Long idAddedAdmin  = adminRepository.addAdmin(admin);
-    assertEquals((long)idAddedAdmin, admin.getId());
+//    Long idAddedAdmin  = adminRepository.addAdmin(admin);
+//    assertEquals((long)idAddedAdmin, admin.getId());
+  }
 
-    //editAdmin E2E test
+  @Test
+  public void testEditAdmin() throws Exception {
+    Admin admin = new Admin((long)2,"Иванов", "Иван",
+        "Иванович", "ivanov", "qwerty", "admin");
+    mockMvc.perform(post("/api/admins", 42L)
+        .contentType("application/json")
+        .content(objectMapper.writeValueAsString(admin)))
+        .andExpect(status().isOk());
+    adminRepository.addAdmin(admin);
+
     EditAdminDto editAdminDto = new EditAdminDto((long)2,"Иванов", "Иван",
         "Иванович", "ivanov", "qwerty", "admin");
-
     mockMvc.perform(put("/api/admins/2", 42L)
         .contentType("application/json")
         .content(objectMapper.writeValueAsString(editAdminDto)))

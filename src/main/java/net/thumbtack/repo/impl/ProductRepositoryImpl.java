@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import net.thumbtack.model.Product;
 import net.thumbtack.repo.iface.ProductRepository;
 import net.thumbtack.repo.mapper.CategoryIdMapper;
@@ -72,7 +73,8 @@ public class ProductRepositoryImpl implements ProductRepository {
         keyHolder);
     long id_product = (Long)keyHolder.getKey();
     List<Long> categories = product.getCategories();
-    for (Long id_category : categories) {
+    List<Long> deduped = categories.stream().distinct().collect(Collectors.toList());
+    for (Long id_category : deduped) {
       jdbcTemplate.update("INSERT INTO products_categories (id_product,id_category)"
               + " values (?,?)",
           id_product,
@@ -95,14 +97,15 @@ public class ProductRepositoryImpl implements ProductRepository {
         product.getCount(),
         product.getPrice(),
         id);
+    jdbcTemplate.update("DELETE FROM products_categories WHERE id_product=" + id);
     List<Long> categories = product.getCategories();
-    for (Long id_category : categories) {
-      jdbcTemplate.update("INSERT INTO products_categories (id_product,id_category)"
-              + " values (?,?)",
-          id,
-          id_category
-      );
+    List<Long> deduped = categories.stream().distinct().collect(Collectors.toList());
+    for (Long id_category : deduped) {
+        jdbcTemplate.update("INSERT INTO products_categories (id_product,id_category)"
+                + " values (?,?)",
+            id,
+            id_category
+        );
     }
-
   }
 }
