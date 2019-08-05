@@ -63,7 +63,7 @@ CREATE TABLE `purchases` (
 	`count` int NOT NULL
 );
 
-ALTER TABLE `categories` ADD CONSTRAINT `categories_fk0` FOREIGN KEY (`parentId`) REFERENCES `categories`(`id`);
+ALTER TABLE `categories` ADD CONSTRAINT `categories_fk0` FOREIGN KEY (`parentId`) REFERENCES `categories`(`id`) ON UPDATE CASCADE ON DELETE CASCADE;
 
 ALTER TABLE `baskets` ADD CONSTRAINT `baskets_fk0` FOREIGN KEY (`id_client`) REFERENCES `clients`(`id`);
 
@@ -71,7 +71,7 @@ ALTER TABLE `baskets` ADD CONSTRAINT `baskets_fk1` FOREIGN KEY (`id_product`) RE
 
 ALTER TABLE `products_categories` ADD CONSTRAINT `products_categories_fk0` FOREIGN KEY (`id_product`) REFERENCES `products`(`id`);
 
-ALTER TABLE `products_categories` ADD CONSTRAINT `products_categories_fk1` FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`);
+ALTER TABLE `products_categories` ADD CONSTRAINT `products_categories_fk1` FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`)ON UPDATE CASCADE ON DELETE CASCADE;
 
 ALTER TABLE `deposits` ADD CONSTRAINT `deposits_fk0` FOREIGN KEY (`id_client`) REFERENCES `clients`(`id`);
 

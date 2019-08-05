@@ -456,16 +456,23 @@ public class ClientRepositoryImpl implements ClientRepository {
     for (ProductDto productDto : productDtoList) {
       if (idProductFromBasketInDataBaseList.contains(productDto.getId())) {
         bought.add(productDto);
-        jdbcTemplate.update("DELETE FROM baskets WHERE id=" + productDto.getId());
         List<Long> idProducts = jdbcTemplate.query
             ("SELECT id_product FROM purchases WHERE id_client = " + idClient, new BasketMapper());
         if (idProducts.contains(productDto.getId())) {
           int oldCountPurchase = jdbcTemplate.queryForObject
               ("SELECT count FROM purchases WHERE id_product = " + productDto.getId(),
                   Integer.class);
-          int newCountPurchse = oldCountPurchase + productDto.getCount();
+          int countFromBasket = jdbcTemplate.queryForObject
+              ("SELECT count FROM baskets WHERE id_product = " + productDto.getId(),
+                  Integer.class);
+          int newCountPurchase = oldCountPurchase + productDto.getCount();
+          int newCountForBasket = countFromBasket - productDto.getCount();
           jdbcTemplate.update("UPDATE purchases SET count = ? WHERE id_product = ?",
-              newCountPurchse, productDto.getId());
+              newCountPurchase, productDto.getId());
+          jdbcTemplate.update("UPDATE baskets SET count = ? WHERE id_product= ?",
+              newCountForBasket, productDto.getId());
+
+          remaining = (List<ProductDto>) getBasket(idClient);
 
         } else {
           jdbcTemplate.update
@@ -478,8 +485,6 @@ public class ClientRepositoryImpl implements ClientRepository {
                   productDto.getCount()
               );
         }
-      } else {
-        remaining.add(productDto);
       }
     }
 
